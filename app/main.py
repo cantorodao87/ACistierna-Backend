@@ -10,7 +10,10 @@ app = FastAPI()
 # Habilitar CORS (para conectar con React en localhost)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Cambia si usas otro puerto
+        allow_origins=[
+        "https://a-cistierna-frontend.vercel.app",  # Dominio de producción
+        "http://localhost:5173",                    # Dominio de desarrollo local
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
